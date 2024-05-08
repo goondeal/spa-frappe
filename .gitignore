@@ -5,3 +5,15 @@
 tags
 node_modules
 __pycache__
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+__pycache__
+tags
+
+task1/docs/current
+task1/public/frontend
+task1/www/teams.html
+task1/www/g.html
+build
