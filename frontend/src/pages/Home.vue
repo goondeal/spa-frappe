@@ -19,7 +19,7 @@
         </button>
       </div>
     </div>
-    <div v-if="branches.data" class="flex-1 m-8">
+    <div v-if="branches.data?.length" class="flex-1 m-8">
       <form class="">
         <div class="flex flex-wrap items-center justify-between">
           <FormControl
@@ -111,8 +111,8 @@
         </div>
       </form>
     </div>
-    <div v-else class="flex content-center items-center h-1/2 m-4">
-      <h2 class="text-3xl">No branches yet</h2>
+    <div v-else class="text-center text-3xl h-1/2 m-8">
+      No branches yet
     </div>
     <div class="text-black p-4 flex items-center justify-center">
       <!-- First -->
@@ -130,7 +130,7 @@
         </svg>
       </button>
       <!-- Count -->
-      <span class="mx-8"> {{getPrevBranchesCount()}} / {{branches.data?.length || 0}}</span>
+      <span class="mx-8"> {{branches.data && branches.data.length > 0 ? getPrevBranchesCount() : 0}} / {{branches.data?.length || 0}}</span>
       <!-- Next -->
       <button @click="navBranch(selectedIndex + 1)" class="mx-4" :disabled="getNextBranchesCount() <= 0" :class="getNextBranchesCount() > 0 ? 'text-black' : 'text-gray-400'">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
