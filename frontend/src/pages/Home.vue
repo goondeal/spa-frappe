@@ -187,6 +187,7 @@ const branches = createListResource({
     console.log('branches', data)
     branch.value = {...(branches.data[selectedIndex.value])}
     console.log('branch', branch.value)
+    console.log('branches.data.length', branches.data.length)
   },
   // auto: true,
 })
@@ -220,6 +221,9 @@ const addBranch = () => {
   console.log('Adding New Branch')
   branches.insert.submit({})
   branches.reload()
+  selectedIndex.value = branches.data.length
+  console.log('selectedIndex', selectedIndex.value)
+  console.log('branches.data.length', branches.data.length)
 }
 
 // Save Branch
